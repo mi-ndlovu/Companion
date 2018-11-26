@@ -53,11 +53,11 @@ public class Token: CustomStringConvertible {
     }
     
     public var description: String {
-        return "token = \(accessToken)" +
-            "\nType = \(tokenType)" +
-            "\nExpire in = \(tokenExpired)" +
-            "\nScope = \(scope)" +
-            "\nCreated at = \(tokenCreated)"
+        return "token = \(String(describing: accessToken))" +
+            "\nType = \(String(describing: tokenType))" +
+            "\nExpire in = \(String(describing: tokenExpired))" +
+            "\nScope = \(String(describing: scope))" +
+        "\nCreated at = \(String(describing: tokenCreated))"
     }
 }
 

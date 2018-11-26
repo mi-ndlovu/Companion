@@ -60,12 +60,8 @@ class ProfileViewController: UIViewController {
     
     func downloadImage(from url: URL)
     {
-        
-        print("Download Started")
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
             DispatchQueue.main.async() {
                 self.imageView.image = UIImage(data: data)
             }
@@ -73,20 +69,3 @@ class ProfileViewController: UIViewController {
     }
 
 }
-
-
-    
-//    func setImage(url:String) {
-//        let url = URL(string: url)!
-//        URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            if error != nil {
-//                print("Error")
-//                return
-//            }
-//            DispatchQueue.main.async {
-//                self.imageView.image = UIImage(data: data!)
-//            }
-//        }.resume()
-//    }
-
-
